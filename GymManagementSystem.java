@@ -112,6 +112,33 @@ public class GymManagementSystem {
         System.out.println("Expiry Date: " + m.endDate);
     }
 
+    // Update member details
+    static void updateMember() {
+
+        System.out.print("Enter Member ID to update: ");
+        int id = Integer.parseInt(sc.nextLine());
+
+        Member m = findMember(id);
+
+        if (m == null) {
+            System.out.println("Member not found!");
+            return;
+        }
+
+        System.out.println("Current Name: " + m.name);
+        System.out.print("Enter new name: ");
+        String newName = sc.nextLine();
+
+        System.out.println("Current Phone: " + m.phone);
+        System.out.print("Enter new phone number: ");
+        String newPhone = sc.nextLine();
+
+        m.name = newName;
+        m.phone = newPhone;
+
+        System.out.println("Member details updated successfully!");
+    }
+
     // View membership plans
     static void viewPlans() {
         System.out.println("\nAVAILABLE MEMBERSHIP PLANS");
@@ -316,7 +343,8 @@ public class GymManagementSystem {
             System.out.println("9. Allot Trainer");
             System.out.println("10. View Trainers");
             System.out.println("11. Search Member");
-            System.out.println("12. Exit");
+            System.out.println("12. Update Member Details");
+            System.out.println("13. Exit");
 
             System.out.print("\nEnter your choice: ");
 
@@ -369,6 +397,10 @@ public class GymManagementSystem {
                         break;
 
                     case 12:
+                        updateMember();
+                        break;
+
+                    case 13:
                         System.out.println("Thank you for using Gym Management System!");
                         return;
 
