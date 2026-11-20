@@ -89,4 +89,32 @@ public class MemberManager {
             System.out.println(e.getMessage());
         }
     }
+
+    // Display all registered members
+    public static void viewAllMembers() {
+
+        System.out.println("\n--- ALL GYM MEMBERS ---");
+
+        if (GymDataStore.members.isEmpty()) {
+            System.out.println("No members registered yet.");
+            return;
+        }
+
+        for (Member member : GymDataStore.members) {
+            System.out.println("-------------------------");
+            member.displayDetails();
+        }
+    }
+
+    // Display available membership plans
+    public static void displayMembershipPlans() {
+
+        System.out.println("\n--- MEMBERSHIP PLANS ---");
+
+        System.out.println("1. Monthly     - Rs.1000  - 30 Days");
+        System.out.println("2. Quarterly   - Rs.2500  - 90 Days");
+        System.out.println("3. Half Yearly - Rs.4500  - 180 Days");
+        System.out.println("4. Yearly      - Rs.8000  - 365 Days");
+    }
+
 }
