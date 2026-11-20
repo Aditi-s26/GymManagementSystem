@@ -57,10 +57,25 @@ public class GymManagementSystem {
         return null;
     }
 
-    // Register new member
+    // Register new member with name validation
     static void registerMember() {
-        System.out.print("Enter member name: ");
-        String name = sc.nextLine();
+
+        String name;
+
+        while (true) {
+            System.out.print("Enter member name: ");
+            name = sc.nextLine().trim();
+
+            if (name.isEmpty()) {
+                System.out.println("Name cannot be empty! Please try again.");
+            }
+            else if (!name.matches("[a-zA-Z ]+")) {
+                System.out.println("Name should contain only letters and spaces! Please try again.");
+            }
+            else {
+                break;
+            }
+        }
 
         System.out.print("Enter phone number: ");
         String phone = sc.nextLine();
@@ -70,9 +85,7 @@ public class GymManagementSystem {
 
         System.out.println("Member registered successfully!");
         System.out.println("Member ID: " + m.id);
-    }
-
-    // View all members
+    }    // View all members
     static void viewMembers() {
         if (members.isEmpty()) {
             System.out.println("No members registered.");
@@ -90,6 +103,7 @@ public class GymManagementSystem {
         }
     }
 
+    
     // Search member using ID
     static void searchMember() {
         System.out.print("Enter Member ID to search: ");
@@ -114,7 +128,6 @@ public class GymManagementSystem {
 
     // Update member details
     static void updateMember() {
-
         System.out.print("Enter Member ID to update: ");
         int id = Integer.parseInt(sc.nextLine());
 
@@ -137,6 +150,23 @@ public class GymManagementSystem {
         m.phone = newPhone;
 
         System.out.println("Member details updated successfully!");
+    }
+
+    // Delete member using ID
+    static void deleteMember() {
+        System.out.print("Enter Member ID to delete: ");
+        int id = Integer.parseInt(sc.nextLine());
+
+        Member m = findMember(id);
+
+        if (m == null) {
+            System.out.println("Member not found!");
+            return;
+        }
+
+        members.remove(m);
+
+        System.out.println("Member deleted successfully!");
     }
 
     // View membership plans
@@ -344,8 +374,8 @@ public class GymManagementSystem {
             System.out.println("10. View Trainers");
             System.out.println("11. Search Member");
             System.out.println("12. Update Member Details");
-            System.out.println("13. Exit");
-
+            System.out.println("13. Delete Member");
+            System.out.println("14. Exit");
             System.out.print("\nEnter your choice: ");
 
             try {
@@ -401,9 +431,12 @@ public class GymManagementSystem {
                         break;
 
                     case 13:
+                        deleteMember();
+                        break;
+
+                    case 14:
                         System.out.println("Thank you for using Gym Management System!");
                         return;
-
                     default:
                         System.out.println("Invalid choice!");
                 }
