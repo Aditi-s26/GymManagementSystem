@@ -57,7 +57,7 @@ public class GymManagementSystem {
         return null;
     }
 
-    // Register new member with name validation
+    // Register new member with name and phone validation
     static void registerMember() {
 
         String name;
@@ -75,17 +75,36 @@ public class GymManagementSystem {
             else {
                 break;
             }
+       }
+
+       String phone = getValidPhoneNumber();
+ 
+       Member m = new Member(memberId++, name, phone);
+       members.add(m);
+
+       System.out.println("Member registered successfully!");
+       System.out.println("Member ID: " + m.id);
+    }
+  
+    // Validate phone number
+    static String getValidPhoneNumber() {
+
+        String phone;
+
+        while (true) {
+            System.out.print("Enter phone number: ");
+            phone = sc.nextLine().trim();
+
+            if (!phone.matches("[0-9]{10}")) {
+                System.out.println("Invalid phone number! Please enter exactly 10 digits.");
+            }
+            else {
+                return phone;
+            }
         }
-
-        System.out.print("Enter phone number: ");
-        String phone = sc.nextLine();
-
-        Member m = new Member(memberId++, name, phone);
-        members.add(m);
-
-        System.out.println("Member registered successfully!");
-        System.out.println("Member ID: " + m.id);
-    }    // View all members
+    }
+    
+    // View all members
     static void viewMembers() {
         if (members.isEmpty()) {
             System.out.println("No members registered.");
