@@ -90,6 +90,28 @@ public class GymManagementSystem {
         }
     }
 
+    // Search member using ID
+    static void searchMember() {
+        System.out.print("Enter Member ID to search: ");
+        int id = Integer.parseInt(sc.nextLine());
+
+        Member m = findMember(id);
+
+        if (m == null) {
+            System.out.println("Member not found!");
+            return;
+        }
+
+        System.out.println("\nMEMBER DETAILS");
+        System.out.println("Member ID: " + m.id);
+        System.out.println("Name: " + m.name);
+        System.out.println("Phone: " + m.phone);
+        System.out.println("Plan: " + m.plan);
+        System.out.println("Trainer: " + m.trainer);
+        System.out.println("Start Date: " + m.startDate);
+        System.out.println("Expiry Date: " + m.endDate);
+    }
+
     // View membership plans
     static void viewPlans() {
         System.out.println("\nAVAILABLE MEMBERSHIP PLANS");
@@ -293,7 +315,8 @@ public class GymManagementSystem {
             System.out.println("8. Add Trainer");
             System.out.println("9. Allot Trainer");
             System.out.println("10. View Trainers");
-            System.out.println("11. Exit");
+            System.out.println("11. Search Member");
+            System.out.println("12. Exit");
 
             System.out.print("\nEnter your choice: ");
 
@@ -342,6 +365,10 @@ public class GymManagementSystem {
                         break;
 
                     case 11:
+                        searchMember();
+                        break;
+
+                    case 12:
                         System.out.println("Thank you for using Gym Management System!");
                         return;
 
