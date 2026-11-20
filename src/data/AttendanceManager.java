@@ -47,4 +47,24 @@ public class AttendanceManager {
             System.out.println(e.getMessage());
         }
     }
+
+    // Display all attendance records
+    public static void viewAttendance() {
+
+        System.out.println("\n--- ATTENDANCE RECORDS ---");
+
+        if (attendanceQueue.isEmpty()) {
+            System.out.println("No attendance records available.");
+            return;
+        }
+
+        for (Attendance attendance : attendanceQueue.getAll()) {
+
+            System.out.println("-------------------------");
+            attendance.displayAttendance();
+        }
+
+        System.out.println("-------------------------");
+    }
+
 }
