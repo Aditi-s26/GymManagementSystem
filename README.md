@@ -1,98 +1,44 @@
-\# Gym Management System
+# Gym Membership Management System
 
+## Project Overview
+The Gym Membership Management System is a console-based Java application developed to manage gym members, membership plans, trainers, and attendance records efficiently.
 
+## Technologies Used
+- Java 21
+- Object-Oriented Programming (OOP)
+- Java Collections Framework
+- Data Structures and Algorithms (DSA)
+- Visual Studio Code
+- Git and GitHub
 
-\## Project Overview
+## Main Features
+1. Register New Member
+2. View All Members
+3. View Membership Plans
+4. Select Membership Plan
+5. Renew Membership
+6. Mark Attendance
+7. View Attendance
+8. Add Trainer
+9. Allot Trainer
+10. View Trainers
+11. Search Member
+12. Update Member Details
+13. Delete Member
 
-The Gym Management System is a Java-based console application designed to manage gym operations. It helps manage members, membership plans, trainers, and attendance.
+## OOP Concepts
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Abstraction
 
+## Custom Exceptions
+- MemberNotFoundException
+- InvalidMembershipPlanException
 
+## Data Structures
+- ArrayList from Java Collections Framework
+- Manually implemented Queue for attendance management
 
-\## Technologies Used
-
-\- Java
-
-\- Object-Oriented Programming
-
-\- ArrayList
-
-\- Git and GitHub
-
-
-
-\## Features
-
-\- Register new gym members
-
-\- View all registered members
-
-\- Search members using Member ID
-
-\- Update member details
-
-\- Delete members
-
-\- View membership plans
-
-\- Select membership plans
-
-\- Renew memberships
-
-\- Mark member attendance
-
-\- View attendance records
-
-\- Register trainers
-
-\- Assign trainers to members
-
-
-
-\## How to Run the Project
-
-
-
-1\. Install Java JDK.
-
-2\. Open Command Prompt.
-
-3\. Navigate to the project folder.
-
-4\. Compile the Java file:
-
-
-
-&#x20;  `javac GymManagementSystem.java`
-
-
-
-5\. Run the application:
-
-
-
-&#x20;  `java GymManagementSystem`
-
-
-
-\## Project Structure
-
-
-
-\- `GymManagementSystem.java` – Main Java source code.
-
-\- `.gitignore` – Specifies files Git should ignore.
-
-\- `README.md` – Project documentation.
-
-
-
-\## Note
-
-This version stores application data in memory using ArrayLists. Data is reset when the application is restarted.
-
-
-
-\## Conclusion
-
-The Gym Management System provides a simple way to manage basic gym activities using Java.
-
+## Project Type
+Console-based Java application.
